@@ -41,8 +41,8 @@ sinfo --help        #查看sinfo的说明
 - [x] ### squeue
 
 ```sh
-squeue									#查看运行中的作业列表
-squeue -l  							#查看列表细节信息
+squeue                  #查看运行中的作业列表
+squeue -l               #查看列表细节信息
 squeue -u<USERNAME>
 squeue -j<JOBID>
 ```
@@ -103,7 +103,7 @@ srun -J JOBNAME -p debug -N 2 -c 1 -n 32 --ntasks-per-node=16 -w node[3,4] -x no
 #SBATCH --partition=debug       %指定分区
 #SBATCH --nodes=2               %指定节点数量
 #SBATCH --cpus-per-task=1       %指定每个进程使用核数，不指定默认为1
-#SBATCH -n 32										%指定总进程数；不使用cpus-per-task，可理解为进程数即为核数
+#SBATCH -n 32                   %指定总进程数；不使用cpus-per-task，可理解为进程数即为核数
 #SBATCH --ntasks-per-node=16    %指定每个节点进程数/核数,使用-n参数（优先级更高），变为每个节点最多运行的任务数
 #SBATCH --nodelist=node[3,4]    %指定优先使用节点
 #SBATCH --exclude=node[1,5-6]   %指定避免使用节点
@@ -137,11 +137,11 @@ todo
 - [x] ### scontrol
 
 ```sh
-scontrol show job JOBID         					#查看作业的详细信息
-scontrol show node              					#查看所有节点详细信息
-scontrol show node node-name    					#查看指定节点详细信息
-scontrol show node | grep CPU 					  #查看各节点cpu状态
-scontrol show node node-name | grep CPU 	#查看指定节点cpu状态
+scontrol show job JOBID                   #查看作业的详细信息
+scontrol show node                        #查看所有节点详细信息
+scontrol show node node-name              #查看指定节点详细信息
+scontrol show node | grep CPU             #查看各节点cpu状态
+scontrol show node node-name | grep CPU   #查看指定节点cpu状态
 ```
 
 ```sh
@@ -171,4 +171,3 @@ minmemorynode=<megabytes>
 1. https://blog.csdn.net/tangjiahao10/article/details/126281267
 2. https://www.hpccube.com/doc/1.0.6/30000/general-handbook/User-Guide/slurm.html?h=slurm
 3. https://zhuanlan.zhihu.com/p/356415669
-
